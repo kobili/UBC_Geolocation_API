@@ -3,12 +3,18 @@ const app = express();
 const fs = require('fs').promises;
 const cors = require('cors');
 
+const port = 3000;
+
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("hello friends");
+    res.send(`UBC Geolocation Service is running at: http://localhost:${3000}/`);
 });
 
+/**
+ * fetches the latitude and longitude of the given address if it exists inside the database
+ * returns: an object of the form {lat: number, lon: number} or an error
+ */
 app.get("/:address", (req, res) => {
     let urlEncodedAddress = req.params.address;
     let address = decodeURI(urlEncodedAddress);
