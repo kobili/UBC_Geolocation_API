@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UBC Geolocation</title>
+    <script type="text/javascript" src="sender.js"></script>
+</head>
+<body>
+
+    <header class="page-title">
+        <h1>UBC Geolocation</h1>
+    </header>
+    <div class="input-container">
+        <p>Enter an address</p>
+        <input type="text" id="input-address">
+        <button id="submit-button">Submit</button>
+    </div>
+
+    <div class="results-container">
+        <div class="latitude">
+            <span>lat: </span>
+            <span id="latitude-result"></span>
+        </div>
+
+        <div class="longitude">
+            <span>lon: </span>
+            <span id="longitude-result"></span>
+        </div>
+
+        <div class="error">
+            <span>error: </span>
+            <span id="error-message"></span>
+        </div>
+    </div>
+
+</body>
+</html>

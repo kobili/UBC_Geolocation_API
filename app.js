@@ -2,13 +2,17 @@ const express = require('express');
 const app = express();
 const fs = require('fs').promises;
 const cors = require('cors');
+const path = require('path');
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
+app.use(express.static(path.join(__dirname, "/frontend", "/public")));
 
 app.get("/", (req, res) => {
-    res.send(`UBC Geolocation Service is running at: http://localhost:${3000}/`);
+    // res.send(`UBC Geolocation Service is running at: http://localhost:${port}/`);
+    res.sendFile("index.html", {root: path.join(__dirname, '/frontend', '/public')});
+    // res.sendFile("sender.js", {root: path.join(__dirname, '/frontend', '/public')});
 });
 
 /**
